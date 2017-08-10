@@ -1,0 +1,22 @@
+如何使用法：
+
+1、使用命令模式构建宏
+Macro macro = new Macro();
+macro.record(new Open(editor));
+macro.record(new Save(editor));
+macro.record(new Close(editor));
+macro.run();
+
+2、使用Lambda表达式构建宏
+Macro macro = new Macro();
+macro.record(() -> editor.open());
+macro.record(() -> editor.save());
+macro.record(() -> editor.close());
+macro.run();
+
+3、使用方法引用构建宏
+Macro macro = new Macro();
+macro.record(editor::open);
+macro.record(editor::save);
+macro.record(editor::close);
+macro.run();
