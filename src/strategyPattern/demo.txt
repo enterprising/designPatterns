@@ -1,0 +1,16 @@
+//使用方法：
+
+1、使用具体的策略类初始化 Compressor
+
+Compressor gzipCompressor = new Compressor(new GzipCompressionStrategy());
+gzipCompressor.compress(inFile, outFile);
+Compressor zipCompressor = new Compressor(new ZipCompressionStrategy());
+zipCompressor.compress(inFile, outFile);
+
+
+2、使用方法引用初始化 Compressor
+
+Compressor gzipCompressor = new Compressor(GZIPOutputStream::new);
+gzipCompressor.compress(inFile, outFile);
+Compressor zipCompressor = new Compressor(ZipOutputStream::new);
+zipCompressor.compress(inFile, outFile);
